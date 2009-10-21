@@ -29,7 +29,11 @@ class ExchangeRates < ActiveRecord::Base
     end
 
     def value(key)
-      @record.fields[key][:value]
+      if @record.fields[key] && @record.fields[key][:value]
+        @record.fields[key][:value]
+      else
+        nil
+      end
     end
   end
 
