@@ -1,8 +1,10 @@
-module ExchangeRatesHelper
-  def exchange_rates &block
-    rates = ExchangeRates.get
-    yield rates 
+class ExchangeRates
+  module ViewHelpers
+    def exchange_rates &block
+      rates = ExchangeRates.get
+      yield rates 
+    end
   end
 end
 
-ActionView::Base.send :include, ExchangeRatesHelper
+ActionView::Base.send :include, ExchangeRates::ViewHelpers
