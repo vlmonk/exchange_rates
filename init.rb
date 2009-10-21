@@ -1,2 +1,2 @@
 require 'exchange_rates'
-require 'exchange_rates_helper'
+require 'exchange_rates/view_helpers'
